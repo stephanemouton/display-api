@@ -14,7 +14,7 @@ class DisplayInterface:
     def set_cursor_position(self, display_id, position):
         if display_id > self.__display.get_available_displays() - 1 or display_id < 0:
             raise ValueError("Invalid display id")
-        self.__display.set_cursor_position(display_id, position)
+        self.__display.set_cursor_position(display_id, int(position['x']), int(position['y']))
 
     def print_message(self, display_id, message):
         if display_id > self.__display.get_available_displays() - 1 or display_id < 0:

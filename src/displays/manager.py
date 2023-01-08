@@ -10,10 +10,10 @@ class DisplayManager:
     def get_available_displays(self):
         return self.__nb_displays
 
-    def set_cursor_position(self, display_id, position):
-        if position.x > self.__max_x or position.x < 0 or position.y > self.__max_y or position.y < 0 :
+    def set_cursor_position(self, display_id, x, y):
+        if x > self.__max_x or x < 0 or y > self.__max_y or y < 0 :
             raise ValueError("Invalid cursor position")
-        print("Cursor at x=" + str(position.x) + ", y=" + str(position.y))
+        print("Cursor at x=" + str(x) + ", y=" + str(y))
 
     def print_message(self, display_id, message):
         print(message)
